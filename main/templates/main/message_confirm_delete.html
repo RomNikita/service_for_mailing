@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+{% block content %}
+
+<title>Удаление рассылки</title>
+    <div class="col">
+        <div class="row">
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body">
+                        <form method="post">
+                            {% csrf_token %}
+                            <p>Хотите удалить сообщение с темой "{{ object.subject_of_letter }}"?</p>
+                            <button type="submit" name="confirm" value="{{ object.id }}" class="btn btn-warning">Подтвердить</button>
+                            <a href="{% url 'main:home' %}" class="btn btn-success">Отмена</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

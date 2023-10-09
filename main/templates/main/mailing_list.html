@@ -1,0 +1,31 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="text-center mt-4">
+        <a href="{% url 'main:mail_create' %}" class="btn btn-primary btn-lg">Создать рассылку</a>
+    </div>
+
+    <div class="row">
+        {% for object in object_list %}
+        <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+                <div class="card-body">
+                    <p class="card-text"> Дата: {{ object.date }}</p>
+                    <p class="card-text">Переодичность рассылки: {{ object.frequency }}</p>
+                    <p class="card-text"> Статус: {{ object.status }}</p>
+                    <p class="card-text">Клиенты: {{ object.client.email }}</p>
+                    <p class="card-text">Письмо: {{ object.message }}</p>
+                    <p class="card-text">дата след. отправки: {{ object.next_send_date }}</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <a href="{% url 'main:mail_delete' pk=object.pk %}" class="btn btn-sm btn-outline-secondary">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

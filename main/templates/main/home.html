@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/home_styles.css' %}">
+{% block content %}
+    <title>Главная страница</title>
+<body>
+    <h1>Главная страница</h1>
+    <p>Всего рассылок: {{ total_mailings }}</p>
+    <p>Активных рассылок: {{ active_mailings }}</p>
+    <p>Уникальных клиентов для рассылок: {{ unique_clients }}</p>
+
+    <h2>Случайные статьи из блога:</h2>
+    <ul>
+        {% for blog in random_blog %}
+            <li><a href="{% url 'blog:blog_detail' blog.id %}">{{ blog.title }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+{% endblock %}

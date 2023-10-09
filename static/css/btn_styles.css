@@ -1,0 +1,23 @@
+/* Общие стили для кнопок */
+nav a.btn {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+    background-color: #007bff; /* Общий цвет фона для всех кнопок */
+    color: #fff; /* Общий цвет текста для всех кнопок */
+}
+
+/* Стили для кнопок "Регистрация", "Вход" и "Выход" */
+nav a.btn.registration-btn {
+    background-color: #dc3545; /* Цвет фона кнопки "Регистрация" */
+}
+
+nav a.btn.login-btn {
+    background-color: #28a745; /* Цвет фона кнопки "Вход" */
+}
+
+nav a.btn.logout-btn {
+    background-color: #ffc107; /* Цвет фона кнопки "Выход" */
+}

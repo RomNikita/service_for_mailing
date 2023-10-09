@@ -1,0 +1,25 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content%}
+<link href={% static 'css/blog_detail_style.css' %} rel="stylesheet">
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div class="article-container">
+        Просмотры: {{ object.count_of_views }}
+        <img class="card-img-top" src="{{ blog.image.url }}" alt="Card image cap">
+        <h1>{{ blog.title }}</h1>
+        <p>Дата написания: {{ blog.date_of_publication }}</p>
+
+        <div>
+            <p>Содержание статьи:</p>
+            <p>{{ blog.body }}</p>
+        </div>
+    </div>
+</body>
+</html>
+
+{% endblock %}

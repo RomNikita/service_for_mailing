@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content%}
+</head>
+<link href={% static 'css/success_registration.css' %} rel="stylesheet">
+<body>
+    <div class="container">
+        <h1>Успешная регистрация!</h1>
+        <p>Спасибо за регистрацию на нашем сайте. Пожалуйста, подтвердите свой адрес электронной почты, чтобы активировать свою учетную запись.</p>
+        <a href="{% url 'users:verify_code' %}" class="button">Подтвердить почту</a>
+    </div>
+</body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+{% block content %}
+
+<title>Удаление записи</title>
+    <div class="col">
+        <div class="row">
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body">
+                        <form method="post">
+                            {% csrf_token %}
+                            <p>Хотите удалить блог {{ object.title }}?</p>
+                            <button type="submit" name="confirm" value="{{ object.id }}" class="btn btn-warning">Подтвердить</button>
+                            <a href="{% url 'blog:blog_list' %}" class="btn btn-success">Отмена</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
